@@ -26,6 +26,13 @@
             </div>
         </div>
     </div>
-
+<div th:fragment="search-field">
+    <table class="job-listing" th:each="job:${jobs}">
+        <tr th:each="a:${job}">
+            <td th:text="${#strings.capitalizeWords(a.key)}"></td>
+            <td th:text="${a.value}"></td>
+        </tr>
+    </table>
+</div>
 </body>
 </html>
